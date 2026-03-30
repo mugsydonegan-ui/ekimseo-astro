@@ -1,0 +1,43 @@
+---
+import MobileNav from './MobileNav';
+
+const navLinks = [
+  { href: '/#services', label: 'Services' },
+  { href: '/#pricing', label: 'Pricing' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/#faq', label: 'FAQ' },
+];
+---
+
+<header class="sticky top-0 z-40 w-full border-b border-[#1a3a2a]/10 bg-[#f5f0e8]/90 backdrop-blur-xl">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex h-[65px] items-center justify-between">
+
+      <a href="/" class="flex items-center gap-2 group" aria-label="EkimSEO home">
+        <div class="w-8 h-8 bg-[#1a3a2a] flex items-center justify-center group-hover:bg-[#c9973a] transition-colors duration-300">
+          <span class="text-[#f5f0e8] text-xs font-black tracking-widest">E</span>
+        </div>
+        <span class="text-lg font-black tracking-tight text-[#1a3a2a]">EkimSEO</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8" aria-label="Main navigation">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="text-sm font-medium text-[#3d3d38] hover:text-[#1a3a2a] transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-[#c9973a] after:transition-all hover:after:w-full"
+          >
+            {link.label}
+          </a>
+        ))}
+        <a
+          href="mailto:mike@ekimseo.com"
+          class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-[#f5f0e8] bg-[#1a3a2a] hover:bg-[#c9973a] active:scale-[0.98] transition-all duration-200"
+        >
+          Get a Free Audit
+        </a>
+      </nav>
+
+      <MobileNav client:load navLinks={navLinks} />
+    </div>
+  </div>
+</header>

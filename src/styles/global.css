@@ -1,0 +1,71 @@
+@import "tailwindcss";
+@import "@fontsource/outfit/400.css";
+@import "@fontsource/outfit/500.css";
+@import "@fontsource/outfit/600.css";
+@import "@fontsource/outfit/700.css";
+@import "@fontsource/outfit/800.css";
+
+@theme {
+  /* EkimSEO brand palette */
+  --color-forest: #1a3a2a;
+  --color-forest-dark: #0f2319;
+  --color-forest-light: #2a5040;
+  --color-cream: #f5f0e8;
+  --color-cream-dark: #ece5d5;
+  --color-gold: #c9973a;
+  --color-gold-light: #e0b45a;
+  --color-gold-dark: #a67a28;
+  --color-ink: #1a1a18;
+  --color-ink-muted: #3d3d38;
+  --color-stone: #8a8678;
+  --color-stone-light: #b8b2a4;
+
+  --font-family-sans: "Outfit", system-ui, sans-serif;
+}
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #f5f0e8;
+    color: #1a1a18;
+    font-family: "Outfit", system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5 {
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    font-weight: 800;
+  }
+
+  ::selection {
+    background-color: #c9973a;
+    color: white;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .grain {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    pointer-events: none;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+    background-size: 180px;
+  }
+}

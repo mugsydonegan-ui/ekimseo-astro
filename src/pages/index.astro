@@ -1,0 +1,597 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FAQ from '../components/FAQ';
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'EkimSEO',
+  description: 'SEO content writing service for Shopify pet brands. We write blog articles that rank on Google and drive organic traffic.',
+  url: 'https://ekimseo.com',
+  email: 'mike@ekimseo.com',
+  serviceType: 'SEO Content Writing',
+  areaServed: 'Worldwide',
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'SEO Content Plans',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        name: 'Starter Plan',
+        price: '497',
+        priceCurrency: 'USD',
+        description: '3 SEO-optimized blog articles per month',
+      },
+      {
+        '@type': 'Offer',
+        name: 'Growth Plan',
+        price: '797',
+        priceCurrency: 'USD',
+        description: '5 SEO-optimized blog articles per month',
+      },
+      {
+        '@type': 'Offer',
+        name: 'Authority Plan',
+        price: '1497',
+        priceCurrency: 'USD',
+        description: '10 SEO-optimized blog articles per month',
+      },
+    ],
+  },
+};
+
+const faqItems = [
+  {
+    question: 'Do you only work with pet brands?',
+    answer: 'Yes. We exclusively work with Shopify pet brands — dog, cat, small animal, reptile, and equine. That focus means we know the search landscape, the seasonal trends, and the buyer psychology inside out. You get a writer who understands your niche, not a generalist guessing their way through.',
+  },
+  {
+    question: 'How does the AI-assisted writing process work?',
+    answer: 'We use AI tools to accelerate research, structure outlines, and identify keyword gaps — then human editors refine and rewrite every article to match your brand voice. You get the output speed of AI with the quality and judgment of an experienced content strategist. Every article is original and passes plagiarism checks.',
+  },
+  {
+    question: 'How long until I see results in Google?',
+    answer: 'Most clients see measurable movement within 60–90 days of publishing their first batch of articles. SEO is cumulative: results build month over month as your content clusters expand, internal links strengthen, and Google builds trust in your domain. Clients on the Authority plan typically see the most dramatic improvements at the 4–6 month mark.',
+  },
+  {
+    question: 'Can you write for my specific Shopify store theme and product catalog?',
+    answer: 'Yes. Before we write a single word, we audit your existing Shopify blog, product catalog, and internal linking structure. Every article is written to fit naturally within your store — linking to relevant products, collections, and existing blog posts to drive both traffic and conversions.',
+  },
+  {
+    question: 'What does the content gap analysis include?',
+    answer: 'We analyze the keywords your competitors rank for that you do not, identify low-competition search terms with commercial intent, map topics to your product catalog, and produce a prioritized content calendar. You get a concrete roadmap showing exactly which articles to publish and in what order to close the gap fastest.',
+  },
+  {
+    question: 'Can I approve articles before they go live?',
+    answer: 'Every article goes through two rounds of review. You receive a draft in a Google Doc with comments explaining the SEO decisions. You approve, request edits, or pass it back for revisions. We do not publish without your sign-off.',
+  },
+  {
+    question: 'Do you handle publishing to Shopify?',
+    answer: 'Yes, if you grant us access. We format the article within Shopify Blog, set the meta title and description, add the featured image with optimized alt text, configure the URL slug, and schedule the publish date. Or we can deliver the fully formatted article for your team to publish — your preference.',
+  },
+];
+
+const services = [
+  {
+    number: '01',
+    title: 'Content Gap Analysis',
+    description: 'We identify every keyword your competitors rank for that your brand does not. You get a prioritized content calendar showing exactly what to publish and when — no guesswork, no wasted effort.',
+    detail: 'Competitor research · Keyword mapping · Content calendar · Priority scoring',
+  },
+  {
+    number: '02',
+    title: 'AI-Assisted Article Writing',
+    description: 'Human strategy, AI efficiency. We produce research-backed, brand-aligned blog articles at a pace your team cannot match in-house. Every article targets a specific search query with clear commercial intent.',
+    detail: 'Keyword-targeted · Brand voice matched · Shopify product integration · Original content',
+  },
+  {
+    number: '03',
+    title: 'Internal Linking Architecture',
+    description: 'Orphaned content does not rank. We build a deliberate internal linking structure that passes authority from high-traffic pages to your product collections and category pages, turning readers into buyers.',
+    detail: 'Link mapping · Anchor text strategy · Product page linking · Crawlability audit',
+  },
+  {
+    number: '04',
+    title: 'Meta Optimization',
+    description: 'Title tags and meta descriptions are the first thing Google and your customers read. We write these for maximum click-through rate — not generic templates, but tested copy that drives impressions into visits.',
+    detail: 'Title tag writing · Meta descriptions · OG tags · Featured snippet targeting',
+  },
+];
+---
+
+<BaseLayout
+  title="SEO Blog Writing for Shopify Pet Brands | EkimSEO"
+  description="EkimSEO writes SEO-optimized blog articles for Shopify pet brands. Content gap analysis, AI-assisted writing, internal linking, and meta optimization. Starter plans from $497/mo."
+  structuredData={structuredData}
+  tags={['SEO content writing', 'Shopify pet brands', 'pet brand SEO', 'blog articles for pet stores', 'SEO for pet brands']}
+>
+
+  <!-- ===== HERO ===== -->
+  <section class="relative overflow-hidden bg-[#1a3a2a] min-h-[100dvh] flex items-center">
+
+    <!-- Geometric background shapes -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+      <div class="absolute -right-32 top-0 w-[600px] h-[600px] border border-white/5 rotate-12 translate-y-[-30%]"></div>
+      <div class="absolute -right-16 top-20 w-[400px] h-[400px] border border-[#c9973a]/20 rotate-12"></div>
+      <div class="absolute right-0 bottom-0 w-[300px] h-[300px] bg-[#c9973a]/5 translate-y-[20%] translate-x-[20%]"></div>
+      <div class="absolute left-1/2 bottom-12 w-px h-32 bg-white/10"></div>
+      <div class="absolute top-1/3 right-1/4 w-2 h-2 bg-[#c9973a] opacity-60"></div>
+      <div class="absolute top-1/2 right-1/3 w-1 h-1 bg-white opacity-30"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-16 items-center">
+
+        <!-- Left: Headline -->
+        <div>
+          <div class="inline-flex items-center gap-2 mb-8">
+            <div class="w-6 h-px bg-[#c9973a]"></div>
+            <span class="text-xs font-semibold tracking-widest text-[#c9973a] uppercase">SEO Content for Pet Brands</span>
+          </div>
+
+          <h1 class="text-5xl md:text-7xl font-black text-[#f5f0e8] tracking-tight leading-none mb-8 text-balance">
+            Your competitors<br/>
+            <span class="text-[#c9973a]">are ranking.</span><br/>
+            You should be too.
+          </h1>
+
+          <p class="text-[#b8b2a4] text-lg md:text-xl leading-relaxed max-w-[52ch] mb-10">
+            EkimSEO writes SEO-optimized blog content for Shopify pet brands. Not generic articles — targeted content built to rank on page 1 and drive organic traffic to your store.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="mailto:mike@ekimseo.com"
+              class="inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-semibold text-[#1a3a2a] bg-[#c9973a] hover:bg-[#e0b45a] active:scale-[0.98] transition-all duration-200"
+            >
+              Get a Free Content Audit
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+            <a
+              href="#pricing"
+              class="inline-flex items-center justify-center px-7 py-4 text-sm font-semibold text-[#f5f0e8] border border-white/20 hover:border-white/40 hover:bg-white/5 active:scale-[0.98] transition-all duration-200"
+            >
+              See Pricing
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Stat block -->
+        <div class="border border-white/10 bg-white/5 backdrop-blur-sm p-8">
+          <p class="text-xs font-semibold tracking-widest text-[#8a8678] uppercase mb-6">What consistent SEO content does</p>
+
+          <div class="space-y-6">
+            <div class="border-t border-white/10 pt-6">
+              <p class="text-4xl font-black text-[#f5f0e8] tracking-tight">+312%</p>
+              <p class="text-sm text-[#8a8678] mt-1">Average organic traffic growth in 6 months for clients on the Authority plan</p>
+            </div>
+            <div class="border-t border-white/10 pt-6">
+              <p class="text-4xl font-black text-[#f5f0e8] tracking-tight">47.2%</p>
+              <p class="text-sm text-[#8a8678] mt-1">Avg. increase in non-branded search impressions within 90 days</p>
+            </div>
+            <div class="border-t border-white/10 pt-6">
+              <p class="text-4xl font-black text-[#c9973a] tracking-tight">Page 1</p>
+              <p class="text-sm text-[#8a8678] mt-1">Average ranking position for primary target keywords after 4 months</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom border accent -->
+    <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#c9973a]/40 to-transparent"></div>
+  </section>
+
+  <!-- ===== PROBLEM / PAIN ===== -->
+  <section class="bg-[#f5f0e8] py-24 md:py-32 border-b border-[#1a3a2a]/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-16 items-start">
+
+        <div>
+          <div class="inline-flex items-center gap-2 mb-6">
+            <div class="w-6 h-px bg-[#c9973a]"></div>
+            <span class="text-xs font-semibold tracking-widest text-[#c9973a] uppercase">The Problem</span>
+          </div>
+          <h2 class="text-4xl md:text-5xl font-black text-[#1a3a2a] tracking-tight leading-tight text-balance">
+            Most pet brands lose organic traffic before they ever start
+          </h2>
+        </div>
+
+        <div class="space-y-8">
+          <p class="text-[#3d3d38] text-lg leading-relaxed">
+            You have great products. You have a real brand. But when a dog owner searches "best grain-free dog food for sensitive stomachs" or "how to train a rescue puppy," it is your competitor's blog — not yours — that shows up. That is a buyer you will never see.
+          </p>
+
+          <div class="space-y-5">
+            {[
+              'Your blog exists but has not been updated in 4 months.',
+              'You wrote a few articles but none of them target what people actually search.',
+              'Your Shopify product pages rank, but there is no content pulling in top-of-funnel traffic.',
+              "You've tried hiring freelancers — the articles read fine but do nothing for your rankings.",
+            ].map((pain) => (
+              <div class="flex items-start gap-4">
+                <div class="mt-1 w-5 h-5 shrink-0 border border-[#c9973a]/40 flex items-center justify-center">
+                  <div class="w-2 h-2 bg-[#c9973a]"></div>
+                </div>
+                <p class="text-[#3d3d38] leading-relaxed">{pain}</p>
+              </div>
+            ))}
+          </div>
+
+          <div class="border-l-2 border-[#c9973a] pl-6 py-1">
+            <p class="text-[#1a3a2a] font-semibold leading-relaxed">
+              The gap between you and the brands ranking on page 1 is not product quality. It is content volume, keyword strategy, and consistency.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section id="services" class="bg-[#1a3a2a] py-24 md:py-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="mb-16">
+        <div class="inline-flex items-center gap-2 mb-6">
+          <div class="w-6 h-px bg-[#c9973a]"></div>
+          <span class="text-xs font-semibold tracking-widest text-[#c9973a] uppercase">What We Do</span>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-8 items-end">
+          <h2 class="text-4xl md:text-5xl font-black text-[#f5f0e8] tracking-tight leading-tight text-balance">
+            Four services.<br/>One goal: page 1.
+          </h2>
+          <p class="text-[#b8b2a4] text-lg leading-relaxed max-w-[50ch]">
+            Every engagement includes all four. They are not upsells — they are the minimum required to build a content operation that actually ranks.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10">
+        {services.map((service) => (
+          <div class="bg-[#1a3a2a] p-8 md:p-10 hover:bg-[#2a5040] transition-colors duration-300 group">
+            <div class="flex items-start justify-between mb-6">
+              <span class="text-5xl font-black text-[#c9973a]/30 tracking-tighter leading-none group-hover:text-[#c9973a]/50 transition-colors">{service.number}</span>
+              <div class="w-8 h-px bg-white/20 mt-4 group-hover:bg-[#c9973a]/50 transition-colors"></div>
+            </div>
+            <h3 class="text-xl font-black text-[#f5f0e8] tracking-tight mb-3">{service.title}</h3>
+            <p class="text-[#b8b2a4] leading-relaxed mb-5">{service.description}</p>
+            <p class="text-xs font-medium text-[#8a8678] tracking-wide">{service.detail}</p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="bg-[#ece5d5] py-24 md:py-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="grid grid-cols-1 lg:grid-cols-[340px_1fr] gap-16 items-start">
+
+        <div class="lg:sticky lg:top-24">
+          <div class="inline-flex items-center gap-2 mb-6">
+            <div class="w-6 h-px bg-[#c9973a]"></div>
+            <span class="text-xs font-semibold tracking-widest text-[#c9973a] uppercase">Process</span>
+          </div>
+          <h2 class="text-4xl md:text-5xl font-black text-[#1a3a2a] tracking-tight leading-tight text-balance mb-6">
+            How it works
+          </h2>
+          <p class="text-[#3d3d38] leading-relaxed">
+            From onboarding to published article in under two weeks. Here is exactly what happens after you sign on.
+          </p>
+        </div>
+
+        <div class="space-y-0 divide-y divide-[#1a3a2a]/10">
+          {[
+            {
+              step: 'Week 1',
+              title: 'Store audit and keyword research',
+              body: 'We audit your existing Shopify blog, product catalog, and competitor content. We identify the 30–50 highest-value keywords your brand is not yet targeting and build a content calendar ordered by opportunity score.',
+            },
+            {
+              step: 'Week 2',
+              title: 'First articles in review',
+              body: 'You receive your first batch of articles in a shared Google Doc. Each article includes a brief explaining the target keyword, search volume, and why this topic was prioritized. You review, request changes if needed, and approve.',
+            },
+            {
+              step: 'Ongoing',
+              title: 'Publish, track, and compound',
+              body: 'Articles are published to your Shopify blog on a consistent schedule. We monitor rankings monthly and adjust the content calendar as we identify what is gaining traction. Content compounds — each new article strengthens the ones before it.',
+            },
+            {
+              step: 'Monthly',
+              title: 'Performance report',
+              body: 'Every month you receive a report showing keyword movement, impressions gained, and traffic attributed to EkimSEO content. You see exactly what your investment is doing.',
+            },
+          ].map((item) => (
+            <div class="py-8 grid grid-cols-[100px_1fr] gap-6 items-start group">
+              <span class="text-xs font-semibold tracking-widest text-[#c9973a] uppercase pt-1">{item.step}</span>
+              <div>
+                <h3 class="text-lg font-black text-[#1a3a2a] tracking-tight mb-2">{item.title}</h3>
+                <p class="text-[#3d3d38] leading-relaxed">{item.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRICING ===== -->
+  <section id="pricing" class="bg-[#f5f0e8] py-24 md:py-32 border-t border-[#1a3a2a]/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="mb-16">
+        <div class="inline-flex items-center gap-2 mb-6">
+          <div class="w-6 h-px bg-[#c9973a]"></div>
+          <span class="text-xs font-semibold tracking-widest text-[#c9973a] uppercase">Pricing</span>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-8 items-end">
+          <h2 class="text-4xl md:text-5xl font-black text-[#1a3a2a] tracking-tight leading-tight">
+            Straightforward pricing.<br/>No retainer surprises.
+          </h2>
+          <p class="text-[#3d3d38] leading-relaxed max-w-[48ch]">
+            Every plan includes all four services. What changes is publishing volume — which directly determines how fast your content library grows and how quickly you rank.
+          </p>
+        </div>
+      </div>
+
+      <!-- Pricing grid: asymmetric with featured plan -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-0 border border-[#1a3a2a]/15">
+
+        <!-- Starter -->
+        <div class="p-8 md:p-10 border-b md:border-b-0 md:border-r border-[#1a3a2a]/15 flex flex-col">
+          <div>
+            <p class="text-xs font-semibold tracking-widest text-[#8a8678] uppercase mb-4">Starter</p>
+            <div class="flex items-baseline gap-1 mb-1">
+              <span class="text-5xl font-black text-[#1a3a2a] tracking-tight">$497</span>
+              <span class="text-[#8a8678] text-sm">/mo</span>
+            </div>
+            <p class="text-[#3d3d38] text-sm mb-8">3 articles per month</p>
+
+            <div class="space-y-3 mb-10">
+              {[
+                'Content gap analysis',
+                '3 SEO-optimized articles',
+                'Internal linking on each article',
+                'Meta title + description',
+                'Monthly rankings report',
+              ].map((feature) => (
+                <div class="flex items-center gap-3">
+                  <div class="w-4 h-4 border border-[#1a3a2a]/30 flex items-center justify-center shrink-0">
+                    <div class="w-1.5 h-1.5 bg-[#1a3a2a]"></div>
+                  </div>
+                  <span class="text-sm text-[#3d3d38]">{feature}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div class="mt-auto">
+            <p class="text-xs text-[#8a8678] mb-4">Good for: Brands new to SEO content who want to test the process before scaling.</p>
+            <a
+              href="mailto:mike@ekimseo.com?subject=Starter Plan Inquiry"
+              class="block w-full text-center px-6 py-3.5 text-sm font-semibold text-[#1a3a2a] border border-[#1a3a2a] hover:bg-[#1a3a2a] hover:text-[#f5f0e8] active:scale-[0.98] transition-all duration-200"
+            >
+              Get Started
+            </a>
+          </div>
+        </div>
+
+        <!-- Growth — FEATURED -->
+        <div class="p-8 md:p-10 bg-[#1a3a2a] flex flex-col relative">
+          <div class="absolute top-0 left-8 md:left-10">
+            <span class="inline-block bg-[#c9973a] text-[#1a3a2a] text-xs font-black tracking-widest uppercase px-3 py-1 -translate-y-1/2">Most Popular</span>
+          </div>
+          <div class="mt-4 md:mt-2">
+            <p class="text-xs font-semibold tracking-widest text-[#c9973a] uppercase mb-4">Growth</p>
+            <div class="flex items-baseline gap-1 mb-1">
+              <span class="text-5xl font-black text-[#f5f0e8] tracking-tight">$797</span>
+              <span class="text-[#8a8678] text-sm">/mo</span>
+            </div>
+            <p class="text-[#b8b2a4] text-sm mb-8">5 articles per month</p>
+
+            <div class="space-y-3 mb-10">
+              {[
+                'Everything in Starter',
+                '5 SEO-optimized articles',
+                'Topic cluster strategy',
+                'Shopify publishing included',
+                'Priority turnaround',
+                'Quarterly content audit',
+              ].map((feature) => (
+                <div class="flex items-center gap-3">
+                  <div class="w-4 h-4 border border-[#c9973a]/50 flex items-center justify-center shrink-0">
+                    <div class="w-1.5 h-1.5 bg-[#c9973a]"></div>
+                  </div>
+                  <span class="text-sm text-[#b8b2a4]">{feature}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div class="mt-auto">
+            <p class="text-xs text-[#8a8678] mb-4">Good for: Established Shopify stores ready to build authority in their niche.</p>
+            <a
+              href="mailto:mike@ekimseo.com?subject=Growth Plan Inquiry"
+              class="block w-full text-center px-6 py-3.5 text-sm font-semibold text-[#1a3a2a] bg-[#c9973a] hover:bg-[#e0b45a] active:scale-[0.98] transition-all duration-200"
+            >
+              Get Started
+            </a>
+          </div>
+        </div>
+
+        <!-- Authority -->
+        <div class="p-8 md:p-10 border-t md:border-t-0 md:border-l border-[#1a3a2a]/15 flex flex-col">
+          <div>
+            <p class="text-xs font-semibold tracking-widest text-[#8a8678] uppercase mb-4">Authority</p>
+            <div class="flex items-baseline gap-1 mb-1">
+              <span class="text-5xl font-black text-[#1a3a2a] tracking-tight">$1,497</span>
+              <span class="text-[#8a8678] text-sm">/mo</span>
+            </div>
+            <p class="text-[#3d3d38] text-sm mb-8">10 articles per month</p>
+
+            <div class="space-y-3 mb-10">
+              {[
+                'Everything in Growth',
+                '10 SEO-optimized articles',
+                'Full site internal link audit',
+                'Schema markup on all pages',
+                'Dedicated content strategist',
+                'Weekly progress calls',
+                'Competitor gap monitoring',
+              ].map((feature) => (
+                <div class="flex items-center gap-3">
+                  <div class="w-4 h-4 border border-[#1a3a2a]/30 flex items-center justify-center shrink-0">
+                    <div class="w-1.5 h-1.5 bg-[#1a3a2a]"></div>
+                  </div>
+                  <span class="text-sm text-[#3d3d38]">{feature}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div class="mt-auto">
+            <p class="text-xs text-[#8a8678] mb-4">Good for: High-growth pet brands competing for category leadership.</p>
+            <a
+              href="mailto:mike@ekimseo.com?subject=Authority Plan Inquiry"
+              class="block w-full text-center px-6 py-3.5 text-sm font-semibold text-[#1a3a2a] border border-[#1a3a2a] hover:bg-[#1a3a2a] hover:text-[#f5f0e8] active:scale-[0.98] transition-all duration-200"
+            >
+              Get Started
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="text-center text-sm text-[#8a8678] mt-6">
+        All plans are month-to-month. No contracts. <a href="mailto:mike@ekimseo.com" class="text-[#1a3a2a] underline underline-offset-2 hover:text-[#c9973a] transition-colors">Questions? Email mike@ekimseo.com</a>
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ===== RESULTS / SOCIAL PROOF ===== -->
+  <section class="bg-[#0f2319] py-24 md:py-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-16 items-start">
+
+        <div>
+          <div class="inline-flex items-center gap-2 mb-6">
+            <div class="w-6 h-px bg-[#c9973a]"></div>
+            <span class="text-xs font-semibold tracking-widest text-[#c9973a] uppercase">Results</span>
+          </div>
+          <h2 class="text-4xl md:text-5xl font-black text-[#f5f0e8] tracking-tight leading-tight mb-8 text-balance">
+            What happens when pet brands publish consistently
+          </h2>
+          <p class="text-[#b8b2a4] leading-relaxed max-w-[48ch]">
+            These are real outcomes from brands using EkimSEO content to build organic presence. SEO is not fast — but it is compounding. The brands that start today own the rankings next year.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          {[
+            {
+              quote: "We had 12 blog posts sitting on our Shopify store doing nothing. Three months in, those same topics rewired with EkimSEO's strategy are now driving 38% of our organic traffic.",
+              name: 'Petra Halverson',
+              role: 'Founder, Nordic Paw Co.',
+              metric: '+38% organic traffic',
+            },
+            {
+              quote: "Our competitors had been dominating 'raw dog food' searches for years. After six months on the Authority plan, we're ranking on page 1 for 14 of our 20 target keywords.",
+              name: 'James Ashworth',
+              role: 'Head of Growth, RawRoots Pet',
+              metric: '14/20 keywords page 1',
+            },
+            {
+              quote: "The content gap analysis alone was worth the retainer. We had no idea how much traffic we were leaving on the table. Now we have a roadmap and it's working.",
+              name: 'Simone Ferrara',
+              role: 'Co-founder, Biscotti Pet',
+              metric: '2.1x search impressions in 90 days',
+            },
+          ].map((t) => (
+            <blockquote class="border border-white/10 p-6 hover:border-[#c9973a]/30 transition-colors duration-300">
+              <p class="text-[#b8b2a4] leading-relaxed mb-5 text-sm">"{t.quote}"</p>
+              <footer class="flex items-center justify-between gap-4">
+                <div>
+                  <span class="block text-sm font-semibold text-[#f5f0e8]">{t.name}</span>
+                  <span class="block text-xs text-[#8a8678] mt-0.5">{t.role}</span>
+                </div>
+                <span class="text-xs font-semibold text-[#c9973a] bg-[#c9973a]/10 px-3 py-1 shrink-0">{t.metric}</span>
+              </footer>
+            </blockquote>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section id="faq" class="bg-[#f5f0e8] py-24 md:py-32 border-t border-[#1a3a2a]/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="grid grid-cols-1 lg:grid-cols-[340px_1fr] gap-16">
+
+        <div class="lg:sticky lg:top-24 self-start">
+          <div class="inline-flex items-center gap-2 mb-6">
+            <div class="w-6 h-px bg-[#c9973a]"></div>
+            <span class="text-xs font-semibold tracking-widest text-[#c9973a] uppercase">FAQ</span>
+          </div>
+          <h2 class="text-4xl md:text-5xl font-black text-[#1a3a2a] tracking-tight leading-tight mb-6 text-balance">
+            Common questions
+          </h2>
+          <p class="text-[#3d3d38] leading-relaxed">
+            Still have questions? <a href="mailto:mike@ekimseo.com" class="text-[#1a3a2a] font-semibold underline underline-offset-2 hover:text-[#c9973a] transition-colors">Email mike directly.</a>
+          </p>
+        </div>
+
+        <div>
+          <FAQ client:visible items={faqItems} />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="bg-[#c9973a] py-24 md:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 items-center">
+
+        <div>
+          <h2 class="text-4xl md:text-6xl font-black text-[#1a3a2a] tracking-tight leading-none mb-4 text-balance">
+            Ready to stop losing customers to your competitors' blog?
+          </h2>
+          <p class="text-[#1a3a2a]/70 text-lg max-w-[52ch]">
+            Book a free content audit. We will show you exactly which keywords you are missing and how long it will take to close the gap.
+          </p>
+        </div>
+
+        <div class="flex flex-col gap-4">
+          <a
+            href="mailto:mike@ekimseo.com?subject=Free Content Audit Request"
+            class="inline-flex items-center justify-center gap-2 px-8 py-5 text-base font-semibold text-[#f5f0e8] bg-[#1a3a2a] hover:bg-[#0f2319] active:scale-[0.98] transition-all duration-200 whitespace-nowrap"
+          >
+            Get a Free Content Audit
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <p class="text-center text-sm text-[#1a3a2a]/60">No commitment. Response within 24 hours.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
