@@ -244,23 +244,36 @@ export default function ChatBot() {
   /* advance to next step */
   function advanceStep(nextStep: number, data?: LeadData) {
     if (nextStep >= STEPS.length) {
-      /* done — show recommendation + thank you */
+      /* done — show recommendation, then thank-you, then complete */
       const finalData = data ?? leadData;
       const rec = recommendPlan(finalData);
-      addBotMessage({ text: rec }, 700);
-
-      setTimeout(() => {
-        addBotMessage(
-          {
-            text: "Thanks! Mike will send you a free content audit within 24 hours. Keep an eye on your inbox.",
-          },
-          1400,
-        );
-        setIsComplete(true);
-        submitLead(finalData);
-      }, 100);
-
       setCurrentStep(nextStep);
+
+      /* chain messages sequentially to avoid overlapping isTyping timers */
+      setIsTyping(true);
+      setTimeout(() => {
+        setMessages((prev) => [...prev, { id: id(), from: 'bot', text: rec }]);
+        setIsTyping(false);
+
+        /* after recommendation renders, show thank-you */
+        setTimeout(() => {
+          setIsTyping(true);
+          setTimeout(() => {
+            setMessages((prev) => [
+              ...prev,
+              {
+                id: id(),
+                from: 'bot',
+                text: "Thanks! Mike will send you a free content audit within 24 hours. Keep an eye on your inbox.",
+              },
+            ]);
+            setIsTyping(false);
+            setIsComplete(true);
+            submitLead(finalData);
+          }, 700);
+        }, 400);
+      }, 700);
+
       return;
     }
 
